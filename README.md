@@ -7,3 +7,7 @@ It can be used in combination with Nagios Core with NagiosQL (V 3.2.0) and requi
 There is one main (perl) script which scans the network and adds the found hosts to a database. It starts with the scan, then checks if the ip address exsists in NagiosQL and it checks its own database. If a host is found which doesn’t exsist in either database, it will check the hostname with a snmpget, using the community given on the webpage. 
 
 Please change the username and password used for the database!
+
+Feature requests:
+* I would like to create an option to make a choise whether to write to NagiosQL or write to file and import, or copy the file.
+* DNS lookup should also be added (configurable if snmp or DNS is leading)
