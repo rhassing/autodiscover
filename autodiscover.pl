@@ -116,3 +116,22 @@ sub getsnmphostname {
              ); 
              my $r_sysName = $result->{"$sysName"};
 }
+
+
+sub getdighostname {
+	my $address = $_[0];
+
+    use Net::DNS;
+    my $res   = Net::DNS::Resolver->new;
+    my $reply = $res->search("$address");
+
+    if ($reply) {
+        foreach my $rr ($reply->answer) {
+            next unless $rr->type eq "A";
+            print $rr->address, "\n";
+        }
+    } else {
+        warn "query failed: ", $res->errorstring, "\n";
+    }
+
+}
