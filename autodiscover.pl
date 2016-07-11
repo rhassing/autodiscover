@@ -11,8 +11,11 @@ use Net::SNMP;
 my ($msg_body, $msg_sender , $msg_rcpt, $sthm, $sql, @row, $dbh, $hostname, $output, $snmp, $sysName, $errstr, $r_sysNamei, $getcomm, $getaddress);
 
 #mysql server
-my $DBuser2="autodiscover";
-my $DBpass2="autodiscover";
+#
+require "include/autodiscover.cfg";
+my $DBuser2=get_account();
+my $DBpass2=get_password();
+
 my $dbhm2=DBI->connect("dbi:mysql:autodiscover","$DBuser2","$DBpass2",
 {
 PrintError => 1,
