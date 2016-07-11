@@ -11,3 +11,4 @@ Please change the username and password used for the database!
 Feature requests:
 * I would like to create an option to make a choise whether to write to NagiosQL or write to file and import, or copy the file.
 * DNS lookup should also be added (configurable if snmp or DNS is leading)
+* Make an admin page for setting up autodiscover
